@@ -7,20 +7,17 @@ import (
 )
 
 type GeneralConfig struct {
-	Server   Server   `yaml:"server"`
-	Database Database `yaml:"database"`
+	Server Server `yaml:"server"`
 }
 
 type Server struct {
-	Port string `yaml:"port"`
-	Host string `yaml:"host,omitempty"`
+	Port    string  `yaml:"port"`
+	Host    string  `yaml:"host,omitempty"`
+	Service Service `yaml:"service"`
 }
 
-type Database struct {
-	Name     string `yaml:"name,omitempty"`
-	User     string `yaml:"user,omitempty"`
-	Password string `yaml:"password,omitempty"`
-	Addr     string `yaml:"addr,omitempty"`
+type Service struct {
+	URL string `json:"url,omitempty"`
 }
 
 func NewGeneralConfig(fPath string) GeneralConfig {

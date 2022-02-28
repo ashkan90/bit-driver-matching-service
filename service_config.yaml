@@ -1,0 +1,10 @@
+
+server:
+  port: "8081"
+  host: ""
+
+database:
+  name: ""
+  user: ""
+  password: ""
+  addr: ""

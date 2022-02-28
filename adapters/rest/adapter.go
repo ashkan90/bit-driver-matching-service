@@ -17,7 +17,7 @@ type Adapter struct {
 }
 
 func (a *Adapter) Serve() {
-	var matchRepository = match.NewRepositoryMatch()
+	var matchRepository = match.NewRepositoryMatch(&a.Config.Service)
 	var matchService = match.NewService(matchRepository)
 	var matchRest = &handler.MatchHandler{Service: matchService}
 

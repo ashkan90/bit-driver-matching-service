@@ -1,4 +1,6 @@
-FROM golang:1.16-alpine
+FROM golang:1.17-alpine as build
+
+WORKDIR /app
 
 WORKDIR /app
 
@@ -8,10 +10,12 @@ RUN go mod download
 
 COPY . ./
 
-RUN CGO_ENABLED=0 go test ./... -v
+RUN GOOS=linux CGO_ENABLED=0 go build -o /bit-driver-matching-service ./cmd/
 
-RUN go build -o ./bit-driver-matching-service ./cmd/
+FROM alpine
+COPY --from=build /bit-driver-matching-service ./app
 
+COPY ./service_config.yaml ./
 EXPOSE 8080
 
-CMD [ "./bit-driver-matching-service" ]
+CMD [ "./app" ]

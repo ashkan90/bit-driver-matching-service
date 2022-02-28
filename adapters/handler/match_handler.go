@@ -10,7 +10,7 @@ import (
 )
 
 const (
-	ErrorOnBind       = `{"message": "%s"}`
+	ErrorOnBind = `{"message": "%s"}`
 )
 
 type MatchHandler struct {

@@ -17,7 +17,8 @@ type Server struct {
 }
 
 type Service struct {
-	URL string `json:"url,omitempty"`
+	URL  string `json:"url,omitempty"`
+	Path string `json:"path,omitempty"`
 }
 
 func NewGeneralConfig(fPath string) GeneralConfig {

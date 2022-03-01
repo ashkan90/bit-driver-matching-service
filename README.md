@@ -47,7 +47,7 @@ curl --location --request GET 'http://localhost:8083/find-nearest' \
 - For mocking I choose 'mocgken' package. It's official package and I can easily find a solution for that I'm facing a problem right now.
 - For unit testing I choose 'testify' package. It suits my usecase very-well and It's very simple to use tho. Also popular enough to worry about community-things.
 - For server framework I choose 'echo' package. It has great documentation and It's coming with built-in examples. I might use fasthttp over echo but fasthttp has some internal problems such as response object is not designed for concurrent usage.
-
+- For circuit-breaker I choose 'mercari/go-circuitbreaker' package. It has builtin 'Ignore and MarkAsSuccess' wrappers so developer don't need to write any logic to handle these kind of things. 
 
 ## Deployment
 

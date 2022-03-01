@@ -11,6 +11,11 @@ type Client struct {
 	client  *http.Client
 }
 
+type ClientImplementation interface {
+	Get(url string) (*http.Response, error)
+	Do(method, url string, body io.Reader) (*http.Response, error)
+}
+
 const (
 	DefaultTimeout = time.Second * 3
 )

@@ -6,18 +6,17 @@ import (
 )
 
 type Service struct {
-	Repository *RepositoryMatch
+	Repository RepositoryImplementation
 }
 
 type RepositoryImplementation interface {
 	FindNearest(loc request.CustomerLocation) response.NearestDriver
 }
 
-func NewService(repo *RepositoryMatch) *Service {
+func NewService(repo RepositoryImplementation) *Service {
 	return &Service{Repository: repo}
 }
 
 func (s *Service) FindNearestDriver(loc request.CustomerLocation) response.NearestDriver {
 	return s.Repository.FindNearest(loc)
 }
-

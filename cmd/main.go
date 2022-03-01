@@ -4,6 +4,7 @@ import (
 	"bit-driver-matching-service/adapters/rest"
 	"bit-driver-matching-service/config"
 	"context"
+	"fmt"
 	"github.com/labstack/echo/v4"
 	"log"
 	"os"
@@ -29,6 +30,10 @@ func main() {
 		Server: sv,
 	}
 	restAdapter.Serve()
+
+	go func() {
+		logger.Fatal(sv.Start(fmt.Sprintf("%s:%s", conf.Server.Host, conf.Server.Port)))
+	}()
 
 	gracefulShutdown(logger, sv)
 }

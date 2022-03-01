@@ -4,7 +4,6 @@ import (
 	"bit-driver-matching-service/adapters/handler"
 	"bit-driver-matching-service/config"
 	"bit-driver-matching-service/domain/match"
-	"fmt"
 	"github.com/labstack/echo/v4"
 	"log"
 	"net/http"
@@ -23,6 +22,5 @@ func (a *Adapter) Serve() {
 
 	a.Server.Add(http.MethodGet, "/find-nearest", matchRest.FindDriver)
 
-	a.Logger.Println("Server has started on port " + a.Config.Port)
-	a.Logger.Fatal(http.ListenAndServe(fmt.Sprintf("%s:%s", a.Config.Host, a.Config.Port), a.Server))
+	a.Logger.Println("Server will be started on port " + a.Config.Port)
 }

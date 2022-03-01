@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"bit-driver-matching-service/domain/match"
 	"bit-driver-matching-service/request"
 	"bit-driver-matching-service/response"
 	"fmt"
@@ -14,7 +13,7 @@ const (
 )
 
 type MatchHandler struct {
-	Service *match.Service
+	Service MatchImplementations
 }
 
 type MatchImplementations interface {

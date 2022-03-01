@@ -32,7 +32,7 @@ func (r *RepositoryMatch) FindNearest(loc request.CustomerLocation) response.Nea
 	defer resp.Body.Close()
 
 	var driver response.NearestDriver
-	json.NewDecoder(resp.Body).Decode(&driver)
+	_ = json.NewDecoder(resp.Body).Decode(&driver)
 
 	return driver
 }

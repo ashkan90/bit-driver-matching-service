@@ -29,7 +29,7 @@ func NewGeneralConfig(fPath string) GeneralConfig {
 	}
 
 	var c GeneralConfig
-	err = yaml.Unmarshal(yamlFile, &c)
+	_ = yaml.Unmarshal(yamlFile, &c)
 
 	return c
 }

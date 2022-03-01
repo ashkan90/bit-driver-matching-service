@@ -1,6 +1,6 @@
 <h1 align="center">Bi Taksi Driver Matching Service</h1>
 
-![example workflow](https://github.com/ashkan90/bit-driver-matching-service/actions/workflows/github-actions.yml/badge.svg) _[badge_soon]_
+![example workflow](https://github.com/ashkan90/bit-driver-matching-service/actions/workflows/main.yml/badge.svg)
 
 > This project aims to find nearest drivers across given customer location. To do that, It's using another service which called 'driver-location-service'
 
